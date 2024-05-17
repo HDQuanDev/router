@@ -11,19 +11,18 @@
 <body>
     <header>
         <h1>Hệ Thống WiFi QDevs</h1>
-        <p>Vui lòng kéo xuống dưới để kết nối với Wifi</p>
-        <p>(Trang Web và hệ thống Wifi đang trong quá trình phát triển)</p>
-
+        <div class="marquee">
+            <p class="text">Vui lòng kéo xuống dưới để kết nối với Wifi, Cảm ơn bạn!</p>
+        </div>
     </header>
     <main>
         <section id="features">
             <h2>Tính Năng Nổi Bật</h2>
-            <p>Vui lòng kéo xuống dưới để kết nối với Wifi:</p>
-            <br>
             <div class="features-container">
                 <div class="feature">
                     <h3>Kết Nối Dễ Dàng</h3>
-                    <p>Chỉ với 1 lần nhấn chuột để kết nối, bạn có thể sử dụng Internet không giới hạn trong 3 tiếng.
+                    <p>Chỉ với 1 lần nhấn chuột để kết nối, bạn có thể sử dụng Internet không giới hạn.<br>
+                        (Bạn sẽ bị ngắt kết nối nếu không có bất kỳ hoạt động sử dụng mạng nào trong 3 tiếng).
                     </p>
                 </div>
                 <div class="feature">
@@ -32,24 +31,71 @@
                         an toàn khỏi kết nối của bạn khi sử dụng WiFi của chúng tôi.</p>
                 </div>
                 <div class="feature">
-                    <h3>Bảo Mật Tuyệt Đối</h3>
-                    <p>Chúng tôi sử dụng mã hóa WPA2/WPA 3 để bảo vệ kết nối của bạn khỏi hacker và tin tặc.</p>
-                </div>
-                <div class="feature">
                     <h3>Tốc Độ Internet Siêu Nhanh</h3>
                     <p>Chúng tôi sử dụng công nghệ WiFi 6 để cung cấp tốc độ Internet siêu nhanh lên đến 1,2 Gbps (Yêu
                         cầu thiết bị của bạn hỗ trợ WiFi 6).</p>
                 </div>
-                
             </div>
             <br>
-            <form method="GET" action="$authaction">
-                <input type="hidden" name="tok" value="$tok">
-                <input type="hidden" name="redir" value="$redir">
-                <input type="submit" value="Nhấn Vào Đây Để Kết Nối Với Mạng" class="connect-button">
-            </form>
 
+            <!-- Checkbox để kích hoạt popup -->
+            <input type="checkbox" id="connectPopup" class="popup-toggle">
+            <div class="popup">
+                <div class="popup-content">
+                    <label for="connectPopup" class="close">&times;</label>
+                    <p style="font-size: 18px; text-align: center;"><b>Quảng Cáo</b></p>
+                    <span style="color: red;">Vui lòng đợi 3s để tiếp tục!</span>
+                    <img src="images/ads.jpg" alt="" width="100%">
+                    <form method="GET" action="$authaction">
+                        <input type="hidden" name="tok" value="$tok">
+                        <input type="hidden" name="redir" value="$redir">
+                        <input type="submit" value="Kết Nối Với Mạng" class="connect-button disabled">
+                    </form>
+                </div>
+            </div>
+
+            <!-- Nút để mở popup -->
+            <label for="connectPopup" class="connect-button">Nhấn Vào Đây Để Kết Nối Với Mạng</label>
         </section>
+
+
+
+        <section id="faq">
+            <h2>Câu Hỏi Thường Gặp</h2>
+            <br>
+            <div class="faq-item">
+                <input type="checkbox" id="faq1">
+                <label for="faq1" class="faq-question">1. Tôi muốn sử dụng WiFi có mật khẩu thì phải làm sao?</label>
+                <div class="faq-answer">
+                    <p>Chúng tôi không yêu cầu mật khẩu để kết nối với mạng WiFi của chúng tôi tuy nhiên nếu bạn muốn
+                        sử dụng mật khẩu, vui lòng liên hệ với tôi qua phần liên hệ bên dưới.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <input type="checkbox" id="faq2">
+                <label for="faq2" class="faq-question">2. Wifi của bạn có giới hạn thời gian sử dụng không?</label>
+                <div class="faq-answer">
+                    <p>Không, nhưng nếu bạn không sử dụng mạng trong 3 tiếng, bạn sẽ bị ngắt kết nối.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <input type="checkbox" id="faq3">
+                <label for="faq3" class="faq-question">3. WiFi có an toàn không?</label>
+                <div class="faq-answer">
+                    <p>Chúng tôi sử dụng DNS QDEVS được cấu hình bằng ADGuard Home để loại bỏ tất cả các quảng cáo,
+                        phần mềm độc hại và trang web không an toàn khỏi kết nối của bạn.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <input type="checkbox" id="faq3">
+                <label for="faq3" class="faq-question">4. Làm thế nào để tôi liên hê với bạn khi cần hỗ trợ?</label>
+                <div class="faq-answer">
+                    <p>Bạn có thể liên hệ với tôi qua Facebook, Telegram hoặc Zalo thông qua thông tin ở phần liên hệ
+                        bên dưới.</p>
+                </div>
+            </div>
+        </section>
+
         <section id="contact">
             <h2>Liên Hệ</h2>
             <p>Bạn cần hỗ trợ? Vui lòng liên hệ tôi qua:</p>
@@ -60,8 +106,10 @@
             </ul>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2024 WiFi QDEVS. All rights reserved.</p>
+        <p>See All Source Code At <a href="https://github.com/HDQuanDev/router" target="_blank">GitHub</a></p>
     </footer>
 </body>
 

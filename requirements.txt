@@ -1,2 +1,2 @@
 openwrt=23.05.3
-router=asus rt-ax53u
+router=asusrtax53u

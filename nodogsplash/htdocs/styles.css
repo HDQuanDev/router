@@ -7,7 +7,7 @@
 
 body {
 	font-family: 'Arial', sans-serif;
-	background-color: #f4f4f4;
+	background-color: #f4f4f9;
 	color: #333;
 	line-height: 1.6;
 	display: flex;
@@ -27,7 +27,8 @@ header {
 
 header::before {
 	content: "";
-	background: url('background.jpg') no-repeat center center/cover;
+	background: url('images/backgroud.jpg') no-repeat center center/cover;
+	background-size: cover;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -69,6 +70,8 @@ header p {
 main {
 	flex: 1;
 	padding: 2rem 1rem;
+	padding-bottom: 10vh;
+	/* Adjust this value based on the height of your footer */
 }
 
 #features {
@@ -86,10 +89,11 @@ main {
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
-	align-items: center;
+	align-items: stretch;
 }
 
 .feature {
+	flex: 1;
 	background-color: white;
 	padding: 1.5rem;
 	border-radius: 8px;
@@ -116,6 +120,7 @@ main {
 	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 	background-color: #f0f8ff;
 }
+
 
 .feature::before {
 	content: '';
@@ -158,10 +163,14 @@ main {
 }
 
 footer {
-	background-color: #0073e6;
-	color: white;
+	background-color: #D8EEF1;
+	color: #515658;
 	text-align: center;
 	padding: 1rem 0;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
 }
 
 /* Responsive Design */
@@ -180,6 +189,7 @@ footer {
 
 	main {
 		padding: 2rem 2rem;
+		padding-bottom: 10vh;
 	}
 
 	.features-container {
@@ -201,6 +211,7 @@ footer {
 @media (min-width: 900px) {
 	main {
 		padding: 2rem 5rem;
+		padding-bottom: 10vh;
 	}
 
 	.feature {
@@ -209,28 +220,231 @@ footer {
 }
 
 .connect-button {
-	display: inline-block;
-	padding: 15px 30px;
-	font-size: 1.2rem;
-	color: white;
-	background-color: #28a745;
+	background: #007bff;
 	border: none;
-	border-radius: 5px;
-	cursor: pointer;
+	color: white;
+	padding: 0.75rem 1.5rem;
 	text-align: center;
 	text-decoration: none;
-	transition: background-color 0.3s, transform 0.3s;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	display: inline-block;
+	font-size: 1rem;
+	margin: 1rem 0;
+	cursor: pointer;
+	border-radius: 4px;
+	transition: background-color 0.3s ease;
 }
 
 .connect-button:hover {
-	background-color: #218838;
-	transform: translateY(-2px);
-	box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+	background-color: #0056b3;
 }
 
-.connect-button:active {
-	background-color: #1e7e34;
-	transform: translateY(0);
+.connect-button.disabled {
+	background-color: #ccc;
+	cursor: not-allowed;
+}
+
+/* Popup styles */
+
+.popup {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup-content {
+	background-color: #fff;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+	max-width: 600px;
+	text-align: center;
+	border-radius: 10px;
+	position: relative;
+}
+
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+	cursor: pointer;
+	position: absolute;
+	top: 10px;
+	right: 20px;
+}
+
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* Animation for enabling button */
+@keyframes enableButton {
+	0% {
+		background-color: #ccc;
+		cursor: not-allowed;
+	}
+
+	99% {
+		background-color: #727377;
+		cursor: not-allowed;
+	}
+
+	100% {
+		background-color: #28a745;
+		cursor: pointer;
+	}
+}
+
+/* Animation for bouncing button */
+@keyframes bounce {
+
+	0%,
+	100% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.1);
+	}
+}
+
+.connect-button.disabled {
+	animation: enableButton 3s forwards, bounce 0.5s 3s infinite;
+}
+
+.connect-button {
+	background: #28a745;
+	border: none;
+	color: white;
+	padding: 0.75rem 1.5rem;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 1rem;
+	margin: 1rem 0;
+	cursor: pointer;
+	border-radius: 20px;
+	transition: background-color 0.3s ease;
+}
+
+.connect-button:hover {
+	background-color: #058d25;
+}
+
+.popup-toggle {
+	display: none;
+}
+
+.popup-toggle:checked+.popup {
+	display: flex;
+}
+
+
+
+#faq {
+	padding: 2rem 1rem;
+}
+
+#faq h2 {
+	text-align: center;
+	color: #0073e6;
+	font-size: 2rem;
+	margin-bottom: 1.5rem;
+}
+
+.faq-item {
+	margin-bottom: 1rem;
+	border-radius: 18px;
+	overflow: hidden;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	background-color: #ffffff;
+}
+
+.faq-question {
+	display: block;
+	width: 100%;
+	padding: 1rem;
+	background-color: #0d2137;
+	color: rgb(255, 255, 255);
+	border: none;
+	border-radius: 5px;
+	text-align: left;
+	cursor: pointer;
+	font-size: 1rem;
+	transition: background-color 0.3s;
+	border: none;
+	outline: none;
+	position: relative;
+}
+
+.faq-question::after {
+	content: '\25BC';
+	/* Mã Unicode của mũi tên xuống */
+	position: absolute;
+	right: 1rem;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: transform 0.3s;
+}
+
+.faq-question:hover {
+	background-color: #005bb5;
+	padding-left: 1.5rem;
+}
+
+.faq-answer {
+	display: none;
+	padding: 1rem;
+	background-color: white;
+	border-radius: 5px;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	margin-top: 0.5rem;
+}
+
+/* Use input to toggle the display of the answer */
+.faq-item input[type="checkbox"] {
+	display: none;
+}
+
+.faq-item input[type="checkbox"]:checked~.faq-question::after {
+	transform: translateY(-50%) rotate(180deg);
+	/* Xoay mũi tên 180 độ khi mục được mở */
+}
+
+.faq-item input[type="checkbox"]:checked~.faq-answer {
+	display: block;
+}
+
+.marquee {
+	width: 100%;
+	overflow: hidden;
+}
+
+.text {
+	display: inline-block;
+	white-space: nowrap;
+	padding-left: 100%;
+	animation: marquee 8s linear infinite;
+}
+
+@keyframes marquee {
+	0% {
+		transform: translateX(0);
+	}
+
+	100% {
+		transform: translateX(-100%);
+	}
 }
