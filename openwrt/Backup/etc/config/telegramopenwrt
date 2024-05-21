@@ -1,7 +1,7 @@
 config telegramopenwrt 'global'
-	option key '6341444150:AAHgtpWOlqFTrVC-XKWyxY8jwMsGsSN2cRU'
+	option key ''
 	option url 'https://api.telegram.org/bot'
-	option my_chat_id '5561561472'
+	option my_chat_id ''
 	option timeout '60'
 	option ignored_macaddrs_file '/etc/telegramopenwrt/macaddr.ignore'
 
