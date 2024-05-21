@@ -125,3 +125,15 @@ config include 'nodogsplash'
 	option type 'script'
 	option path '/usr/lib/nodogsplash/restart.sh'
 
+config rule
+	option name 'Allow-LuCi-On-WAN'
+	option src 'wan'
+	option dest_port '80'
+	option target 'ACCEPT'
+
+config rule
+	option name 'Allow-SSH-On-WAN'
+	option src 'wan'
+	option dest_port '21'
+	option target 'ACCEPT'
+
