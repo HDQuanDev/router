@@ -459,3 +459,14 @@ footer {
 		transform: translateX(-100%);
 	}
 }
+
+.terms-link {
+    color: #FF4500; /* Màu cam đậm để làm nổi bật liên kết */
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: bold; /* Chữ đậm */
+}
+
+.terms-link:hover {
+    color: #FF6347; /* Màu cam sáng khi hover */
+}

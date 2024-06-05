@@ -34,7 +34,8 @@
                     <h3>Tốc Độ Internet Siêu Nhanh</h3>
                     <p>Chúng tôi sử dụng công nghệ WiFi 6 để cung cấp tốc độ Internet siêu nhanh lên đến 1,2 Gbps (Yêu
                         cầu thiết bị của bạn hỗ trợ WiFi 6). (*)</p>
-                        <div class="note">(*) Trong điều kiện lý tưởng, tốc độ có thể thay đổi tùy thuộc vào môi trường sử dụng.</div>
+                    <div class="note">(*) Trong điều kiện lý tưởng, tốc độ có thể thay đổi tùy thuộc vào môi trường sử
+                        dụng.</div>
                 </div>
             </div>
             <br>
@@ -44,11 +45,10 @@
             <div class="popup">
                 <div class="popup-content">
                     <label for="connectPopup" class="close">&times;</label>
-                    <p style="font-size: 18px"><b>Thông Báo Quan Trọng</b></p>
-                    <span style="color: red;"><b>Bạn nào sử dụng thiết bị kick sóng wifi tên MW300RE thì Request đến router mình ít thôi không bị chặn đấy,
-                        nếu bạn cần hãy mua cái Router lên phòng 13 kéo mạng Lan nhé!</b>
+                    <p style="font-size: 18px"><b>Quảng Cáo</b></p>
+                    <span style="color: red;">Vui lòng đợi 3 giây để tiếp tục
                     </span>
-                    <!-- <img src="images/ads.jpg" alt="" width="100%"> -->
+                    <img src="images/ads.jpg" alt="" width="100%">
                     <form method="GET" action="$authaction">
                         <input type="hidden" name="tok" value="$tok">
                         <input type="hidden" name="redir" value="$redir">
@@ -59,9 +59,30 @@
 
             <!-- Nút để mở popup -->
             <label for="connectPopup" class="connect-button">Nhấn Vào Đây Để Kết Nối Với Mạng</label>
+            <br>
+            <!-- Popup Điều Khoản -->
+            <input type="checkbox" id="termsPopup" class="popup-toggle">
+            <div class="popup">
+                <div class="popup-content">
+                    <label for="termsPopup" class="close">&times;</label>
+                    <h3>Điều Khoản Sử Dụng</h3>
+                    <p><strong>Khi bạn đã kết nối với mạng WiFi của tôi, bạn đã đồng ý với các điều khoản sau:</strong>
+                        <ol>
+                        <li>Không sử dụng mạng để truy cập vào các trang web có nội dung không lành mạnh, phản cảm, bạo lực, đồi trụy, vi phạm pháp luật.</li>
+                        <li>Không sử dụng mạng để tấn công vào các hệ thống mạng khác.</li>
+                        <li>Không sử dụng mạng để phát tán virus, phần mềm độc hại.</li>
+                        <li>Đồng ý với việc cho phép tôi thu thập thông tin về thiết bị của bạn như địa chỉ MAC, IP, tên thiết để phục vụ mục đích quản lý mạng.</li>
+                        <li>Tôi không chịu trách nhiệm về mọi hành vi vi phạm pháp luật của bạn khi sử dụng mạng của tôi.</li>
+                    </ol>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Nút để mở popup điều khoản -->
+            <p>Bằng cách nhấn vào nút này, bạn đã đồng ý với <label for="termsPopup" class="terms-link">điều
+                    khoản</label> của chúng tôi.</p>
+
         </section>
-
-
 
         <section id="faq">
             <h2>Câu Hỏi Thường Gặp</h2>
@@ -104,7 +125,7 @@
             <p>Bạn cần hỗ trợ? Vui lòng liên hệ tôi qua:</p>
             <ul>
                 <li>Facebook: <a href="https://www.facebook.com/quancp72h">Hứa Đức Quân</a></li>
-                <li>Telegram: <a href="https://t.me/@quancp72h">@quancp72h</a></li>
+                <li>Telegram: <a href="https://t.me/quancp72h">@quancp72h</a></li>
                 <li>Zalo: <a href="https://zalo.me/0877872003">087.787.2003</a></li>
             </ul>
         </section>
@@ -112,7 +133,8 @@
 
     <footer>
         <p>&copy; 2024 WiFi QDEVS. All rights reserved.</p>
-        <p>See All Source Code At <a href="https://github.com/HDQuanDev/router" target="_blank">GitHub</a> - Version <span style="color: red; font-weight: bold;">Q.0.5.Beta</span></p>
+        <p>See All Source Code At <a href="https://github.com/HDQuanDev/router" target="_blank">GitHub</a> - Version
+            <span style="color: red; font-weight: bold;">Q.0.6.Beta</span></p>
     </footer>
 </body>
 
