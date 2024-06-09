@@ -437,7 +437,7 @@ footer {
 .faq-item input[type="checkbox"]:checked~.faq-answer {
 	display: block;
 }
-
+ 
 .marquee {
 	width: 100%;
 	overflow: hidden;
